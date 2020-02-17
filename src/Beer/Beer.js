@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-const urlApiBeer = () =>'https://api.punkapi.com/v2/beers/random'
 class Municipio extends Component{
     state = {}
 
@@ -9,9 +8,7 @@ class Municipio extends Component{
         .then(d => {
             this.setState(
                 {beers: d
-            });
-            console.log(this.state.beers );
-            
+            });            
         })
     }
 
@@ -32,12 +29,8 @@ class Municipio extends Component{
                             </h5>
                             <div id={"collapse" + beer.id} className="collapse" aria-labelledby="heading-example">
                                 <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-                                    officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
-                                    wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-                                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
-                                    excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
-                                    you probably haven't heard of them accusamus labore sustainable VHS.
+                                    <p>Descrição: {beer.description}</p>
+                                    <img src={beer.image_url}></img>
                                 </div>
                             </div>
                         </div>
